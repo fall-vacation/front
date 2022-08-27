@@ -12,15 +12,24 @@ const Post = ({ posts }: any) => {
         <title>Post Page</title>
       </Head>
 
-      <Header />
-
       <main>
         <h2>Post Page</h2>
+
         <ul>
-          {posts?.map((post: any, index: number) => {
-            return <div key={index}>{post.id}</div>;
-          })}
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
         </ul>
+
+        <style jsx>{`
+          ul {
+          }
+          ul > li {
+            color: red;
+          }
+        `}</style>
       </main>
     </div>
   );
