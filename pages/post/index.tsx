@@ -3,8 +3,10 @@ import React from 'react';
 const Post = ({ posts }: any) => {
   return (
     <div>
+
       <main>
         <h2>Post Page</h2>
+
       </main>
     </div>
   );

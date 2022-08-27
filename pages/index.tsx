@@ -6,6 +6,7 @@ const Home: NextPage = () => {
       <main>
         <h2>Home</h2>
       </main>
+
     </div>
   );
 };
