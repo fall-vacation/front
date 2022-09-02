@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from "react";
 
-const Post = ({ posts }: any) => {
+const Post = () => {
+  useEffect(() => {
+    fetch("/api/posts")
+      .then((data) => data.json)
+      .then((json) => console.log(json));
+  }, []);
   return (
     <div>
-
       <main>
         <h2>Post Page</h2>
-
       </main>
     </div>
   );
