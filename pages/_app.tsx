@@ -7,7 +7,6 @@ import Seo from '../components/common/Seo';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-
       <Seo
         title='Fall-Vacation'
         keywords={['농사', '농장', '취미농사']}
