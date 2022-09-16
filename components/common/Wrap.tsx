@@ -8,7 +8,7 @@ const Wrap = ({ children }: AppWrapProps) => {
       <style jsx>
         {`
           .wrap {
-            max-width: 1024px;
+            max-width: 1680px;
             margin: 0 auto;
           }
         `}
