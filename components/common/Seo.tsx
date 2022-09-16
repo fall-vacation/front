@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 type AppSeoProps = {
   title: string;
@@ -7,7 +7,7 @@ type AppSeoProps = {
 };
 
 const Seo = ({ title, keywords, descrption }: AppSeoProps) => {
-  const keyword = keywords?.join(', ');
+  const keyword = keywords?.join(", ");
   return (
     <Head>
       <title>{title}</title>
@@ -17,7 +17,7 @@ const Seo = ({ title, keywords, descrption }: AppSeoProps) => {
       <script src='https://apis.google.com/js/platform.js' async defer></script>
       <meta
         name='google-signin-client_id'
-        content='372283287418-7u6ejvdougrh2qm3hpfhtu20ib7lohc2.apps.googleusercontent.com.apps.googleusercontent.com'
+        content='316528616128-l2tjfkmsjj3enepr1r5jaog8ab960oke.apps.googleusercontent.com'
       />
     </Head>
   );
