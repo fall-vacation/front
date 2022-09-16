@@ -1,19 +1,22 @@
 import type { NextPage } from "next";
+import { useState } from "react";
 
 const Home: NextPage = () => {
-  function onSignIn(googleUser: any) {
-    var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log("Name: " + profile.getName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+
+  const onSIgnIn = (googleUser: any) => {
+    const profile = googleUser.getBasicProfile();
+    console.log("google profile", profile);
+
+    setIsLogin(true);
+  };
 
   return (
     <div>
       <main>
         <h2>Home</h2>
         <div className='g-signin2' data-onsuccess='onSignIn'></div>
+        <div>{isLogin ? "로그인이 되었습니다" : "로그인을 해주세요"}</div>
       </main>
     </div>
   );
