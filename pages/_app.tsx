@@ -4,6 +4,7 @@ import Layout from "../components/common/Layout";
 import Head from "next/head";
 import Seo from "../components/common/Seo";
 import { wrapper } from "../store";
+import "../public/static/fonts/style.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
