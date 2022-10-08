@@ -1,13 +1,28 @@
-import React from "react";
-import Nav from "../../../components/common/Nav";
+import { useState, useEffect } from "react";
+import Zoom from "@/components/ui/icon/zoom";
 import * as S from "./style";
 
 const Title = () => {
+  const [title, setTitle] = useState("Title");
+
+  useEffect(() => {
+    setTitle("Title");
+  }, []);
   return (
-    <S.VisualContainer>
-      <Nav />
-      <S.VisualSlogan>Title</S.VisualSlogan>
-    </S.VisualContainer>
+    <S.Container>
+      <S.Slogan>{title}</S.Slogan>
+      <S.InputBox>
+        <div className="input-wrap">
+          <input
+            type="text"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setTitle(e.target.value);
+            }}
+          />
+        </div>
+        <Zoom />
+      </S.InputBox>
+    </S.Container>
   );
 };
 

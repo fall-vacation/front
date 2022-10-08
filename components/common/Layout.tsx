@@ -1,7 +1,7 @@
-import React from 'react';
-import Wrap from './Wrap';
-import Header from './Header';
-import Footer from './Footer';
+import React from "react";
+import Wrap from "./Wrap";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
 type AppLayoutProps = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type AppLayoutProps = {
 const Layout = ({ children }: AppLayoutProps) => {
   return (
     <>
-      <Header />
+      <Nav />
       <Wrap>{children}</Wrap>
       <Footer />
     </>

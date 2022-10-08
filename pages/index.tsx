@@ -7,7 +7,6 @@ const Home: NextPage = () => {
       <main>
         <Title />
         <Introduce />
-
         <NavBtns />
       </main>
     </div>

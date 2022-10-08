@@ -13,7 +13,7 @@ export const NavBtn = styled.div`
   width: 50%;
   height: 60rem;
   text-align: center;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => props.theme.mainColor};
   .title {
     margin-bottom: 5rem;
     font-family: "GmarketSans";
