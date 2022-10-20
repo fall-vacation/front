@@ -1,19 +1,40 @@
-import React from "react";
-import Nav from "@/components/common/Nav";
-import Image from "next/image";
-import * as S from "./style";
-
+import React from 'react'
+import Nav from '@/components/common/Nav'
+import Image from 'next/image'
+import * as S from './style'
+// 이미지
+import Pumpkin from '../../../public/images/ic_ pumpkin.png'
 const Introduce = () => {
   return (
     <S.IntroduceContainer>
       <S.Title>
-        가을방학은 삶의 바탕이 되는 자연과 환경을 소중하게 생각합니다
+        가을방학은
+        <br />
+        삶의 바탕이 되는 자연과 환경을
+        <br />
+        소중하게 생각합니다
       </S.Title>
-      <S.Slogan>Sed ut perspiciatis</S.Slogan>
+      <S.Slogan>DECOUVRIR</S.Slogan>
       <S.Content>
         <div className="image">
-          img
-          <Image src={""} alt="introduce-image" />
+          <S.CropsList>
+            <li>
+              <Image src={Pumpkin} alt="introduce-image" />
+              <span>딸기</span>
+            </li>
+            <li>
+              <Image src={Pumpkin} alt="introduce-image" />
+              <span>딸기</span>
+            </li>
+            <li>
+              <Image src={Pumpkin} alt="introduce-image" />
+              <span>딸기</span>
+            </li>
+            <li>
+              <Image src={Pumpkin} alt="introduce-image" />
+              <span>딸기</span>
+            </li>
+          </S.CropsList>
         </div>
         <div className="text">
           <p>
@@ -24,7 +45,7 @@ const Introduce = () => {
         </div>
       </S.Content>
     </S.IntroduceContainer>
-  );
-};
+  )
+}
 
-export default Introduce;
+export default Introduce

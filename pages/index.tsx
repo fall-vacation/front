@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
-import { Title, Introduce, NavBtns } from "../components/home";
+import type { NextPage } from 'next'
+import { Title, Introduce, NavBtns, Community } from '../components/home'
 
 const Home: NextPage = () => {
   return (
@@ -8,9 +8,10 @@ const Home: NextPage = () => {
         <Title />
         <Introduce />
         <NavBtns />
+        <Community />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
