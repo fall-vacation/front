@@ -1,10 +1,10 @@
-import React from 'react'
-import Nav from '@/components/common/Nav'
-import Image from 'next/image'
-import Link from 'next/link'
-import * as S from './style'
-import { Color } from '@/constant/color'
-import LinkArrow from '../../../public/images/ic_linkArrow.svg'
+import React from "react";
+import Nav from "@/components/common/Nav";
+import Image from "next/image";
+import Link from "next/link";
+import * as S from "./style";
+import { Color } from "@/constant/color";
+import LinkArrow from "../../../../public/images/ic_linkArrow.svg";
 const NavBtns = () => {
   return (
     <S.NavBtnContainer>
@@ -21,15 +21,15 @@ const NavBtns = () => {
         link="./taewans-farm"
       />
     </S.NavBtnContainer>
-  )
-}
+  );
+};
 
 type Props = {
-  color: string
-  title: string
-  content: string
-  link: string
-}
+  color: string;
+  title: string;
+  content: string;
+  link: string;
+};
 
 const NavBtn = ({ color, title, content, link }: Props) => {
   return (
@@ -45,7 +45,7 @@ const NavBtn = ({ color, title, content, link }: Props) => {
         </a>
       </Link>
     </S.NavBtn>
-  )
-}
+  );
+};
 
-export default NavBtns
+export default NavBtns;

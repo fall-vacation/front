@@ -1,4 +1,4 @@
-import { Farm } from "@/types/index";
+import { Farm } from "./style";
 
 type Props = {
   farmList: Farm[];
