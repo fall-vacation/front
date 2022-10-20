@@ -1,9 +1,9 @@
-import React from 'react'
-import Nav from '@/components/common/Nav'
-import Image from 'next/image'
-import * as S from './style'
+import React from "react";
+import Nav from "@/components/common/Nav";
+import Image from "next/image";
+import * as S from "./style";
 // 이미지
-import Pumpkin from '../../../public/images/ic_ pumpkin.png'
+import Pumpkin from "../../../../public/images/ic_ pumpkin.png";
 const Introduce = () => {
   return (
     <S.IntroduceContainer>
@@ -45,7 +45,7 @@ const Introduce = () => {
         </div>
       </S.Content>
     </S.IntroduceContainer>
-  )
-}
+  );
+};
 
-export default Introduce
+export default Introduce;
