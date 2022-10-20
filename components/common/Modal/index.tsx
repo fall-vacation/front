@@ -1,8 +1,14 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, RefObject, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 
-const Modal = ({ children }: { children: ReactNode }) => {
+const Modal = ({
+  children,
+  target,
+}: {
+  children: ReactNode;
+  target: RefObject<HTMLDivElement>;
+}) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -12,7 +18,7 @@ const Modal = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <ModalWrap>
+    <ModalWrap ref={target}>
       {mounted
         ? createPortal(children, document.querySelector("#modal-portal")!)
         : null}
