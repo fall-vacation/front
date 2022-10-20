@@ -8,3 +8,7 @@ export const NavBar = styled.nav`
   align-items: center;
   background-color: transparent;
 `;
+
+export const HamburgerWrap = styled.div`
+  z-index: 999;
+`;

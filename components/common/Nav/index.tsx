@@ -1,10 +1,12 @@
 import React from "react";
 import Wrap from "../Wrap";
 import Hamburger from "@/components/ui/icon/hamburger";
+import Modal from "../Modal";
 
 import * as S from "./style";
 
 const Nav = () => {
+  const openModal = () => {};
   return (
     <Wrap>
       <S.NavBar>
@@ -12,9 +14,12 @@ const Nav = () => {
           <a href="">Logo</a>
         </h1>
 
-        <div>
+      
           <Hamburger />
-        </div>
+          <Modal>
+            <div>ffqefqhjq</div>
+          </Modal>
+     
       </S.NavBar>
     </Wrap>
   );
