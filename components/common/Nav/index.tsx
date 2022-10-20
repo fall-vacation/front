@@ -17,12 +17,11 @@ const Nav = () => {
       <S.NavBar>
         <h1>
           <a href="/">Vacciones de otono</a>
-          <button onClick={() => setIsOpen(true)}>
-            모달 open (확인후삭제)
-          </button>
         </h1>
 
-        <Hamburger />
+        <div onClick={() => setIsOpen(!isOpen)}>
+          <Hamburger />
+        </div>
 
         {isOpen && (
           <Modal target={modalRef}>
