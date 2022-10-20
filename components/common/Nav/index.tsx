@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Link from "next/link";
 import Wrap from "../Wrap";
 import Hamburger from "@/components/ui/icon/hamburger";
 import Modal from "../Modal";
@@ -16,7 +17,9 @@ const Nav = () => {
     <Wrap>
       <S.NavBar>
         <h1>
-          <a href="/">Vacciones de otono</a>
+          <Link href="/">
+            <a>Vacciones de otono</a>
+          </Link>
         </h1>
 
         <div onClick={() => setIsOpen(!isOpen)}>
