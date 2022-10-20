@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Hamburger = styled.svg`
   cursor: pointer;
+  transform: rotate(-180deg);
   path {
     transition: all 0.5s ease;
     stroke: #000;
@@ -22,20 +23,20 @@ const Hamburger = styled.svg`
       transform: translate(-40%, 20%) rotate(-45deg);
     }
   }
-`;
+`
 
 const Index = () => {
   return (
     <>
       <Hamburger width={25} height={25}>
-        <path d="M25 1 L0 1" viewBox="0 0 20 20" strokeWidth="2"></path>
+        <path d="M20 1 L0 1" viewBox="0 0 20 20" strokeWidth="2"></path>
 
-        <path d="M25 11 L0 11" viewBox="0 0 20 20" strokeWidth="2"></path>
+        <path d="M12 11 L0 11" viewBox="0 0 20 20" strokeWidth="2"></path>
 
         <path d="M25 20 L0 20" viewBox="0 0 20 20" strokeWidth="2"></path>
       </Hamburger>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

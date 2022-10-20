@@ -1,15 +1,15 @@
-import React from "react";
-import Wrap from "../Wrap";
-import Hamburger from "@/components/ui/icon/hamburger";
+import React from 'react'
+import Wrap from '../Wrap'
+import Hamburger from '@/components/ui/icon/hamburger'
 
-import * as S from "./style";
+import * as S from './style'
 
 const Nav = () => {
   return (
     <Wrap>
       <S.NavBar>
         <h1>
-          <a href="">Logo</a>
+          <a href="/">Vacciones de otono</a>
         </h1>
 
         <div>
@@ -17,7 +17,7 @@ const Nav = () => {
         </div>
       </S.NavBar>
     </Wrap>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

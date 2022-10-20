@@ -1,20 +1,14 @@
+import * as S from '../../styles/common/style'
 type AppWrapProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
+
 const Wrap = ({ children }: AppWrapProps) => {
   return (
     <>
-      <div className='wrap'>{children}</div>
-      <style jsx>
-        {`
-          .wrap {
-            max-width: 1680px;
-            margin: 0 auto;
-          }
-        `}
-      </style>
+      <S.WrapContainer>{children}</S.WrapContainer>
     </>
-  );
-};
+  )
+}
 
-export default Wrap;
+export default Wrap
