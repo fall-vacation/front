@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "@svg-maps/south-korea": "^1.0.1",
     "@types/axios": "^0.14.0",
     "@types/redux-logger": "^3.0.9",
     "@types/styled-components": "^5.1.26",
