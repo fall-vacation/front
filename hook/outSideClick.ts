@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-export default function useOutsideClick(
-  ref: React.MutableRefObject<any>,
-  handler: (e: any) => void
-) {
+export default function useOutsideClick(ref: React.MutableRefObject<any>, handler: (e: any) => void) {
   useEffect(() => {
     const proc = (e: any) => {
       if (e.path === undefined) return;
-      if (
-        ref.current &&
-        !ref.current.contains(e.target) &&
-        e.path.find((v: HTMLDivElement) => v.id === "x-portal") === undefined
-      ) {
+      if (ref.current && !ref.current.contains(e.target) && e.path.find((v: HTMLDivElement) => v.id === "x-portal") === undefined) {
         handler(e);
+      } else {
+        console.log("Xxx");
       }
     };
 
@@ -23,7 +18,7 @@ export default function useOutsideClick(
       document.removeEventListener("mousedown", proc);
       document.removeEventListener("touchstart", proc);
     };
-  }, [ref]);
+  }, [ref, handler]);
 
   return [ref, handler];
 }

@@ -26,13 +26,7 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
   }, []);
   return (
     <>
-      <svg
-        className="south-korea"
-        width={width}
-        height={(656 * width) / 800}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox=" 0 0 800 656 "
-      >
+      <svg className="south-korea" width={width} height={(656 * width) / 800} xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 800 656 ">
         <g className="locations">
           <path
             id="CD11110"
@@ -256,83 +250,83 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
         }
 
         .FillGrey {
-          fill: #d5d5d5 !important;
+          fill: #c8c8c8 !important;
         }
 
         #CD11110 {
-          fill: #f1c40f;
+          fill: #e9b665;
         }
         #CD11140 {
-          fill: #16a085;
+          fill: #e9b665;
         }
         #CD11170 {
-          fill: #f39c12;
+          fill: #e9b665;
         }
         #CD11200 {
-          fill: #2ecc71;
+          fill: #e9b665;
         }
         #CD11215 {
-          fill: #e67e22;
+          fill: #e9b665;
         }
         #CD11230 {
-          fill: #27ae60;
+          fill: #e9b665;
         }
         #CD11260 {
-          fill: #d35400;
+          fill: #e9b665;
         }
         #CD11290 {
-          fill: #3498db;
+          fill: #e9b665;
         }
         #CD11305 {
-          fill: #e74c3c;
+          fill: #e9b665;
         }
         #CD11320 {
-          fill: #2980b9;
+          fill: #e9b665;
         }
         #CD11350 {
-          fill: #c0392b;
+          fill: #e9b665;
         }
         #CD11380 {
-          fill: #9b59b6;
+          fill: #e9b665;
         }
         #CD11410 {
-          fill: #8e44ad;
+          fill: #e9b665;
         }
         #CD11440 {
-          fill: #34495e;
+          fill: #e9b665;
         }
         #CD11470 {
-          fill: #2c3e50;
+          fill: #e9b665;
         }
         #CD11500 {
-          fill: #1abc9c;
+          fill: #e9b665;
         }
         #CD11530 {
-          fill: #f1c40f;
+          fill: #e9b665;
         }
         #CD11545 {
-          fill: #16a085;
+          fill: #e9b665;
         }
         #CD11560 {
-          fill: #f39c12;
+          fill: #e9b665;
         }
         #CD11590 {
-          fill: #2ecc71;
+          fill: #e9b665;
         }
         #CD11620 {
-          fill: #e67e22;
+          fill: #e9b665;
         }
         #CD11650 {
-          fill: #27ae60;
+          fill: #e9b665;
         }
         #CD11680 {
-          fill: #d35400;
+          fill: #e9b665;
         }
         #CD11710 {
-          fill: #3498db;
+          fill: #e9b665;
         }
         #CD11740 {
-          fill: #e74c3c;
+          fill: #e9b665;
         }
         .LINE {
           stroke-linejoin: round;

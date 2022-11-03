@@ -72,7 +72,7 @@ class CustomDocument extends Document {
         </Head>
         <body>
           <Main />
-          <div id="modal-portal" className="modal-portal" />
+          <div id="x-portal" className="x-portal" />
           <NextScript />
         </body>
       </Html>

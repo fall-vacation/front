@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Color } from '@/constant/color'
+import styled from "styled-components";
+import { Color } from "@/constant/color";
 export const NavBar = styled.nav`
   display: flex;
   width: 100%;
@@ -18,15 +18,16 @@ export const NavBar = styled.nav`
   h1 {
     font-size: 4.8rem;
     line-height: 1;
-    font-family: 'Comfortaa';
+    font-family: "Comfortaa";
     font-weight: 500;
   }
-`
+`;
 
 export const HamburgerWrap = styled.div`
   z-index: 999;
-`
+`;
 export const ModalContents = styled.div`
+
   position: absolute;
   left: 50%;
   top: 50%;
@@ -125,4 +126,4 @@ export const ModalContents = styled.div`
       }
     }
   }
-`
+`;

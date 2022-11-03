@@ -17,7 +17,7 @@ const Modal = ({ children, target, width, height }: ModalProps) => {
     return () => setMounted(false);
   }, []);
 
-  return mounted ? createPortal(children, document.querySelector("#modal-portal")!) : null;
+  return mounted ? createPortal(children, document.querySelector("#x-portal")!) : null;
 };
 
 export default Modal;

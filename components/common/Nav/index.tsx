@@ -36,22 +36,35 @@ const Nav = () => {
 
         {isOpen && (
           <Modal target={modalRef}>
-            <S.ModalContents>
-              <div className="login_bg">
-                <h2 className="title">SNS Login</h2>
-              </div>
-              <ul>
-                <li className="naver">네이버 로그인</li>
-                <li className="kakao">카카오 로그인</li>
-                <li className="facebook">페이스북 로그인</li>
-                <GoogleLogin clientId="316528616128-l2tjfkmsjj3enepr1r5jaog8ab960oke.apps.googleusercontent.com" buttonText="구글로 계속하기" onSuccess={responseGoogle} onFailure={responseGoogle} />
-              </ul>
-            </S.ModalContents>
+            <Dim>
+              <S.ModalContents>
+                <div className="login_bg">
+                  <h2 className="title">SNS Login</h2>
+                </div>
+                <ul>
+                  <li className="naver">네이버 로그인</li>
+                  <li className="kakao">카카오 로그인</li>
+                  <li className="facebook">페이스북 로그인</li>
+                  <GoogleLogin clientId="316528616128-l2tjfkmsjj3enepr1r5jaog8ab960oke.apps.googleusercontent.com" buttonText="구글로 계속하기" onSuccess={responseGoogle} onFailure={responseGoogle} />
+                </ul>
+              </S.ModalContents>
+            </Dim>
           </Modal>
         )}
       </S.NavBar>
     </Wrap>
   );
 };
+
+const Dim = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999999;
+  overflow: hidden;
+`;
 
 export default Nav;
