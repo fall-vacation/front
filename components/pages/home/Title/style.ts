@@ -6,7 +6,7 @@ export const ContainerWrap = styled.div`
   width: 100%;
   height: 96rem;
   background: url('../../../../images/bg_visual.jpg') no-repeat center top;
-  background-size: cover;
+  background-size: contain;
 `
 export const ContainerBox = styled.div`
   max-width: 1538px;
@@ -27,7 +27,7 @@ export const Slogan = styled.h2`
     font-weight: 300;
     display: block;
     color: #fff;
-    margin-top: 3rem;
+    margin-top: 3.2rem;
   }
 `
 
