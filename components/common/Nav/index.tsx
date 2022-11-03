@@ -1,19 +1,19 @@
-import React, { useState, useRef } from "react";
-import Link from "next/link";
-import Wrap from "../Wrap";
-import Hamburger from "@/components/ui/icon/hamburger";
-import Modal from "../Modal";
-import useOutsideClick from "hook/outSideClick";
-import * as S from "./style";
-import styled from "styled-components";
+import React, { useState, useRef } from 'react'
+import Link from 'next/link'
+import Wrap from '../Wrap'
+import Hamburger from '@/components/ui/icon/hamburger'
+import Modal from '../Modal'
+import useOutsideClick from 'hook/outSideClick'
+import * as S from './style'
+import styled from 'styled-components'
 
 const Nav = () => {
-  const modalRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement>(null)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   useOutsideClick(modalRef, () => {
-    setIsOpen(false);
-  });
+    setIsOpen(false)
+  })
   return (
     <Wrap>
       <S.NavBar>
@@ -29,68 +29,54 @@ const Nav = () => {
 
         {isOpen && (
           <Modal target={modalRef}>
-            <ModalContents>
+            <S.ModalContents>
+              <div className="login_bg">
+                <h2 className="title">SNS Login</h2>
+              </div>
               <ul>
-                <li className="naver">네이버 로그인</li>
-                <li className="kakao">카카오 로그인</li>
-                <li className="facebook">페이스북 로그인</li>
-                <li className="google">구글 로그인</li>
+                <li className="naver">
+                  <div className="icon_box">
+                    <img
+                      src="../images/ic_naver_login.png"
+                      alt="네이버 아이콘"
+                    />
+                  </div>
+                  네이버 로그인
+                </li>
+                <li className="kakao">
+                  <div className="icon_box">
+                    <img
+                      src="../images/ic_kakao_login.png"
+                      alt="카카오 아이콘"
+                    />
+                  </div>
+                  카카오 로그인
+                </li>
+                <li className="facebook">
+                  <div className="icon_box">
+                    <img
+                      src="../images/ic_facebook_login.png"
+                      alt="페이스북 아이콘"
+                    />
+                  </div>
+                  페이스북 로그인
+                </li>
+                <li className="google">
+                  <div className="icon_box">
+                    <img
+                      src="../images/ic_google_login.png"
+                      alt="구글 아이콘"
+                    />
+                  </div>
+                  구글 로그인
+                </li>
               </ul>
-            </ModalContents>
+            </S.ModalContents>
           </Modal>
         )}
       </S.NavBar>
     </Wrap>
-  );
-};
+  )
+}
 
-const ModalContents = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 380px;
-  height: 480px;
-  background-color: #fff;
-  border: 1px black solid;
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 114px 50px;
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 50px;
-      text-align: center;
-      border-radius: 10px;
-      font-weight: 200;
-      font-size: 18px;
-      line-height: 21px;
-      color: White;
-      & + li {
-        margin-top: 10px;
-      }
-      &.naver {
-        background-color: #2fb403;
-      }
-      &.kakao {
-        background-color: #f9e007;
-        color: black;
-      }
-      &.facebook {
-        background-color: #45619d;
-      }
-      &.google {
-        background-color: #d6492f;
-      }
-    }
-  }
-`;
-
-export default Nav;
+export default Nav
