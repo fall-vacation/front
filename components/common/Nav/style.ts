@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const NavBar = styled.nav`
   display: flex;
@@ -18,9 +18,11 @@ export const NavBar = styled.nav`
   h1 {
     font-size: 4.8rem;
     line-height: 1;
+    font-family: 'Comfortaa';
+    font-weight: 500;
   }
-`;
+`
 
 export const HamburgerWrap = styled.div`
   z-index: 999;
-`;
+`
