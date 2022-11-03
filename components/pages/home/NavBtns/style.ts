@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { Color } from "@/constant/color";
+import styled from 'styled-components'
+import { Color } from '@/constant/color'
 
 export const NavBtnContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 export const NavBtn = styled.div`
   display: flex;
   justify-content: center;
@@ -39,15 +39,16 @@ export const NavBtn = styled.div`
     }
   }
   .sub {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.8rem;
     line-height: 3.6rem;
     letter-spacing: -0.15rem;
     margin-bottom: 1.9rem;
+    font-weight: 'Amalfi Coast Regular';
   }
   .title {
     margin-bottom: 3.8rem;
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
     font-size: 2.4rem;
     font-weight: 700;
     font-size: 8.4rem;
@@ -63,9 +64,9 @@ export const NavBtn = styled.div`
     display: inline-flex;
     align-items: center;
     color: #fff;
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
     span {
       margin-right: 2rem;
     }
   }
-`;
+`
