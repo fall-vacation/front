@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
-import Fonts from 'assets/fonts'
+import { createGlobalStyle } from "styled-components";
+
 const GlobalFonts = createGlobalStyle`
 
 
   
-`
+`;
 
-export default GlobalFonts
+export default GlobalFonts;

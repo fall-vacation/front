@@ -1,5 +1,5 @@
 import SouthKorea from "@/components/pages/weekend-farm/south-korea";
-import { Farm } from "./type";
+import { Farm } from "../../types/type";
 import styled from "styled-components";
 import * as S from "../../components/pages/home/Title/style";
 

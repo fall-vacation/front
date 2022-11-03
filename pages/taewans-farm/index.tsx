@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Crop } from "./type";
+import { Crop } from "../../types/type";
 
 type Props = {
   farmList: Crop[];
