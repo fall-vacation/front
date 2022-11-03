@@ -27,7 +27,7 @@ export const Slogan = styled.h2`
     font-weight: 300;
     display: block;
     color: #fff;
-    margin-top: 3rem;
+    margin-top: 3.2rem;
   }
 `
 
