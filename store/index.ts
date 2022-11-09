@@ -14,3 +14,10 @@ export const useCrops = create(
     cropList: [],
   }))
 );
+
+export const useUserStore = create(
+  devtools<any>((set) => ({
+    user: {},
+    setUser: (data: any) => set((state: any) => ({ user: data })),
+  }))
+);

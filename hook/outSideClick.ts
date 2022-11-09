@@ -6,8 +6,6 @@ export default function useOutsideClick(ref: React.MutableRefObject<any>, handle
       if (e.path === undefined) return;
       if (ref.current && !ref.current.contains(e.target) && e.path.find((v: HTMLDivElement) => v.id === "x-portal") === undefined) {
         handler(e);
-      } else {
-        console.log("Xxx");
       }
     };
 

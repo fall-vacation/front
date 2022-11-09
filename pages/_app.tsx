@@ -4,6 +4,7 @@ import Head from "next/head";
 import Seo from "../components/common/Seo";
 import { ThemeProvider, DefaultTheme } from "styled-components";
 import { GlobalStyle } from "@/styles/globalStyle";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import "../public/static/fonts/style.css";
 
 const theme: DefaultTheme = {
@@ -14,12 +15,13 @@ const theme: DefaultTheme = {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout>
-        <Seo title="Fall-Vacation" keywords={["농사", "농장", "취미농사"]} descrption="이 앱은 취미농사를 찾는 사람들을 위한 앱입니다" />
-
-        <Component {...pageProps} />
-      </Layout>
+      <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || ""}>
+        <GlobalStyle />
+        <Layout>
+          <Seo title="Fall-Vacation" keywords={["농사", "농장", "취미농사"]} descrption="이 앱은 취미농사를 찾는 사람들을 위한 앱입니다" />
+          <Component {...pageProps} />
+        </Layout>
+      </GoogleOAuthProvider>
     </ThemeProvider>
   );
 }

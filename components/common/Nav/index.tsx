@@ -7,7 +7,8 @@ import Modal from "../Modal";
 import useOutsideClick from "hook/outSideClick";
 import * as S from "./style";
 import styled from "styled-components";
-import GoogleLogin from "react-google-login";
+import GoogleLoginButton from "../GoogleLogin/login";
+import GoogleLogoutButton from "../GoogleLogin/logout";
 
 const Nav = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -16,10 +17,6 @@ const Nav = () => {
   useOutsideClick(modalRef, () => {
     setIsOpen(false);
   });
-
-  const responseGoogle = (res: any) => {
-    console.log(res);
-  };
 
   return (
     <Wrap>
@@ -45,7 +42,8 @@ const Nav = () => {
                   <li className="naver">네이버 로그인</li>
                   <li className="kakao">카카오 로그인</li>
                   <li className="facebook">페이스북 로그인</li>
-                  <GoogleLogin clientId="316528616128-l2tjfkmsjj3enepr1r5jaog8ab960oke.apps.googleusercontent.com" buttonText="구글로 계속하기" onSuccess={responseGoogle} onFailure={responseGoogle} />
+                  <GoogleLoginButton />
+                  <GoogleLogoutButton />
                 </ul>
               </S.ModalContents>
             </Dim>
