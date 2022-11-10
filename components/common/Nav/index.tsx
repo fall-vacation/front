@@ -9,6 +9,7 @@ import * as S from "./style";
 import styled from "styled-components";
 import GoogleLoginButton from "../GoogleLogin/login";
 import GoogleLogoutButton from "../GoogleLogin/logout";
+import KakaoLoginButton from "../KakaoLogin/login";
 
 const Nav = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -40,10 +41,13 @@ const Nav = () => {
                 </div>
                 <ul>
                   <li className="naver">네이버 로그인</li>
-                  <li className="kakao">카카오 로그인</li>
+                  <li className="kakao">
+                    <KakaoLoginButton />
+                  </li>
                   <li className="facebook">페이스북 로그인</li>
-                  <GoogleLoginButton />
-                  <GoogleLogoutButton />
+                  <li>
+                    <GoogleLoginButton />
+                  </li>
                 </ul>
               </S.ModalContents>
             </Dim>
