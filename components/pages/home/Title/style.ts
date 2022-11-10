@@ -5,7 +5,8 @@ export const ContainerWrap = styled.div`
   position: relative;
   width: 100%;
   height: 96rem;
-  background: url('../../../../images/bg_visual.jpg');
+  background: url('../../../../images/bg_visual.jpg') no-repeat center top;
+  background-size: contain;
 `
 export const ContainerBox = styled.div`
   max-width: 1538px;
@@ -18,13 +19,15 @@ export const Slogan = styled.h2`
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.25;
+  font-family: 'GmarketSans';
+  font-weight: 500;
   span {
     font-size: 3.2rem;
     line-height: 1.5;
     font-weight: 300;
     display: block;
     color: #fff;
-    margin-top: 3rem;
+    margin-top: 3.2rem;
   }
 `
 

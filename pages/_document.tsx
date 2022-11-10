@@ -1,10 +1,4 @@
-import Document, {
-  Head,
-  Html,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
+import Document, { Head, Html, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 class CustomDocument extends Document {
@@ -14,8 +8,7 @@ class CustomDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
       const initialProps = await Document.getInitialProps(ctx);
       return {
@@ -31,12 +24,16 @@ class CustomDocument extends Document {
       sheet.seal();
     }
   }
+  // API키 :  AIzaSyBS9mU8RuLXVwGdwKItGx4dmOQ2vS0YEcQ
+  // Auth 클라이언트 ID : 316528616128-l2tjfkmsjj3enepr1r5jaog8ab960oke.apps.googleusercontent.com
 
   render() {
     return (
       <Html lang="ko">
         <Head>
           <link rel="shortcut icon" href="/favicon.ico" />
+          <meta name="google-signin-client_id" content={process.env.NEXT_PUBLIC_NAVER_CLIENT_ID} />
+
           {/* {isProduction && (
             <>
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
@@ -75,7 +72,7 @@ class CustomDocument extends Document {
         </Head>
         <body>
           <Main />
-          <div id="modal-portal" className="modal-portal" />
+          <div id="x-portal" className="x-portal" />
           <NextScript />
         </body>
       </Html>

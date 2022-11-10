@@ -1,20 +1,70 @@
 @font-face {
-  font-family: "GmarketSans";
-  src: url("./GmarketSansLight.woff") format("woff");
+  font-family: 'GmarketSans';
+  src: url('./GmarketSansLight.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GmarketSans";
-  src: url("./GmarketSansMedium.woff") format("woff");
+  font-family: 'GmarketSans';
+  src: url('./GmarketSansMedium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GmarketSans";
-  src: url("./GmarketSansBold.woff") format("woff");
+  font-family: 'GmarketSans';
+  src: url('./GmarketSansBold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amalfi Coast Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Amalfi Coast Regular'), url('Amalfi Coast.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: 500;
+}
+@font-face {
+  font-family: 'S-CoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: 700;
 }

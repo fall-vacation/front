@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Crop } from "./style";
+import { Crop } from "../../types/type";
 
 type Props = {
   farmList: Crop[];
@@ -13,18 +13,12 @@ const Index = ({ farmList }: Props) => {
     <div>
       <h2>완이네 텃밭</h2>
       <ul>
-        {farmList?.map((farm) => {
+        {farmList?.map((farm, i) => {
           const { name, imageUrl, level, temperature } = farm;
           return (
-            <li>
+            <li key={i}>
               <div style={{ width: 100, height: 100 }}>
-                <Image
-                  src={imageUrl}
-                  alt={name}
-                  layout="responsive"
-                  width={100}
-                  height={100}
-                />
+                <Image src={imageUrl} alt={name} layout="responsive" width={100} height={100} />
               </div>
               <div>작물명 : {name}</div>
               <div>레벨 : {level}</div>

@@ -14,6 +14,7 @@ export const Title = styled.h2`
   line-height: 1.1;
   color: #5a9090;
   font-weight: 300;
+  font-family: 'GmarketSans';
 `
 
 export const Slogan = styled.div`
@@ -51,6 +52,7 @@ export const Content = styled.div`
     line-height: 4.4rem;
     text-align: left;
     font-weight: 300;
+    font-family: 'GmarketSans';
   }
 `
 
