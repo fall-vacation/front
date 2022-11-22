@@ -1,21 +1,59 @@
 import { useEffect } from "react";
+import styled from "styled-components";
 
 type SouthKoreaProps = {
   width: number;
+  handleClick: (v: string) => void;
 };
 
-/**
- * 현재 path 와 text가 나눠져있는데,
- * path에 click이벤트가 걸려있어, text클릭시 이벤트가 발동하지않는다
- * 따라서 추후에 같은구끼리 g > path,text 형태로 묶어야함
- */
+export const FIXED_LOCATION_INFO = [
+  { name: "강서구", id: "CD11500" },
+  { name: "양천구", id: "CD11470" },
+  { name: "구로구", id: "CD11530" },
+  { name: "금천구", id: "CD11545" },
+  { name: "관악구", id: "CD11620" },
+  { name: "동작구", id: "CD11590" },
+  { name: "영등포구", id: "CD11560" },
+  { name: "마포구", id: "CD11440" },
+  { name: "은평구", id: "CD11380" },
+  { name: "서대문구", id: "CD11410" },
+  { name: "용산구", id: "CD11170" },
+  { name: "서초구", id: "CD11650" },
+  { name: "강남구", id: "CD11680" },
+  { name: "송파구", id: "CD11710" },
+  { name: "강동구", id: "CD11740" },
+  { name: "광진구", id: "CD11215" },
+  { name: "성동구", id: "CD11200" },
+  { name: "중구", id: "CD11140" },
+  { name: "종로구", id: "CD11110" },
+  { name: "성북구", id: "CD11290" },
+  { name: "강북구", id: "CD11305" },
+  { name: "도봉구", id: "CD11320" },
+  { name: "노원구", id: "CD11350" },
+  { name: "중랑구", id: "CD11260" },
+  { name: "동대문구", id: "CD11230" },
+];
 
-export default function SouthKorea({ width }: SouthKoreaProps) {
+const LocationIcon = () => {
+  return (
+    <>
+      <svg width={50} height={50} viewBox="0 0 50 50">
+        <path d=""></path>
+      </svg>
+    </>
+  );
+};
+
+export default function SouthKorea({ width, handleClick }: SouthKoreaProps) {
   useEffect(() => {
     const locationList = document.querySelectorAll(".locations path");
 
     locationList.forEach((location, index) => {
-      location.addEventListener("click", () => {
+      location.addEventListener("click", (e) => {
+        const currentTarget = e.target as HTMLElement;
+        const name = FIXED_LOCATION_INFO.filter((info) => info.id === currentTarget.id)[0]?.name || "";
+        handleClick(name);
+
         const target = locationList[index];
         locationList.forEach((v, _) => {
           v.classList.add("FillGrey");
@@ -24,6 +62,7 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
       });
     });
   }, []);
+
   return (
     <>
       <svg className="south-korea" width={width} height={(656 * width) / 800} xmlns="http://www.w3.org/2000/svg" viewBox=" 0 0 800 656 ">
@@ -33,6 +72,8 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
             className="FillGrey"
             d="M 455 297 l 4 -2 1 0 1 0 3 -1 4 5 7 3 2 6 0 8 -11 2 -11 1 -8 0 -9 1 -8 1 -9 1 -9 -2 -10 -1 -9 1 -4 3 -2 3 -6 -6 -3 -4 -5 -6 -4 -5 -2 -5 5 -3 0 -6 0 -10 0 -9 1 -9 -3 -4 -2 0 -2 0 -1 -4 0 -9 -5 -9 1 -10 -1 -11 -1 -6 2 -6 5 -2 7 -3 10 -2 2 -1 3 0 1 0 4 -2 8 -1 3 6 4 1 3 8 3 10 1 6 3 5 0 9 0 7 -1 5 -6 3 -6 4 -1 5 6 4 5 3 5 4 9 1 10 0 4 4 3 4 5 10 1 3 z "
           />
+          <LocationIcon />
+
           <path
             id="CD11140"
             className="FillGrey"
@@ -154,6 +195,9 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
             d="M 726 320 l 1 7 3 9 0 9 1 9 1 10 1 5 -1 -1 -5 -1 -3 0 -4 2 -11 0 -8 1 -5 6 -4 5 -4 6 -2 4 -1 8 -4 7 -3 2 1 1 -1 2 -6 7 -1 8 -5 -2 -5 -3 -3 -2 -8 -4 -5 -3 -8 -5 -5 -2 0 -7 1 -3 2 -5 0 -8 -4 -4 -4 -2 -6 -2 -7 0 2 -4 2 -5 2 -10 4 -10 1 -1 4 -6 7 -6 5 -3 6 -3 8 -3 4 -1 5 0 11 0 9 -4 7 -5 8 -6 11 -6 11 0 0 7 3 6 z "
           />
         </g>
+        <g clipPath="url(#clip0_367_44)">
+          <rect width="50" height="50" fill="url(#pattern0)" />
+        </g>
 
         <g className="texts">
           <text id="LCD11110" className="TEXT" x="399" y="277">
@@ -232,6 +276,15 @@ export default function SouthKorea({ width }: SouthKoreaProps) {
             강동구
           </text>
         </g>
+
+        <defs>
+          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlinkHref="#image0_367_44" transform="scale(0.00195312)" />
+          </pattern>
+          <clipPath id="clip0_367_44">
+            <rect width="512" height="512" fill="white" />
+          </clipPath>
+        </defs>
       </svg>
 
       <style jsx>{`

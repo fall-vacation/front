@@ -5,7 +5,7 @@ export const NavBar = styled.nav`
   width: 100%;
   height: 14.4rem;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   padding: 0 4.5rem;
   background: transparent;
   top: 0;
@@ -33,15 +33,16 @@ export const ModalContents = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 52rem;
-  height: 64rem;
+  height: 40rem;
   background-color: #fff;
+
   > * {
     box-sizing: border-box;
   }
 
   .login_bg {
     background: #52a2ec;
-    height: 24rem;
+    height: 12rem;
     position: relative;
     &::after{
       content: '';
@@ -116,9 +117,7 @@ export const ModalContents = styled.div`
         background-color: #FEE500;
         color: black;
       }
-      &.facebook {
-        background-color: #45619D;
-      }
+
       &.google {
         background-color: #FFFFFF;
         border: 0.1rem solid #DEDEDE;

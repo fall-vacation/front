@@ -20,6 +20,8 @@ const KakaoButton = styled.button`
   color: black;
   border: 1px black solid;
   border-radius: 10px;
+  font-size: 2.5rem;
+  text-align: center;
   outline: none;
   cursor: pointer;
 `;

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import SouthKorea from "@/components/pages/weekend-farm/south-korea";
 import { Farm } from "../../types/type";
 import styled from "styled-components";
 import * as S from "../../components/pages/home/Title/style";
+import { Color } from "@/constant/color";
+import { FIXED_LOCATION_INFO } from "../../components/pages/weekend-farm/south-korea";
 
 type Props = {
   farmList: Farm[];
@@ -72,28 +75,40 @@ const MOCK_DATA = [
   },
 ];
 
-const locations = ["도봉구", "노원구", "강북구", "성북구", "중랑구", "동대문구"];
+const locations = FIXED_LOCATION_INFO.map((info) => info.name);
 
 const Index = ({ farmList }: Props) => {
+  const [filter, setFilter] = useState<string>("");
+  const handleFilter = (type: string) => {
+    if (type === "all") {
+      console.log(type);
+    } else {
+      console.log(type);
+    }
+  };
   return (
     <S.ContainerBox>
-      <h2>위켄드팜</h2>
+      <h2 className="title">Weekend Farm</h2>
+      <div className="slogan">위켄드팜은 어쩌고 저쩌고 조용하고 안락한 블라블라 다양한 농장을 제공합니다아.</div>
 
       <FilterWrap>
-        <SouthKorea width={800} />
+        <SouthKorea width={800} handleClick={(v) => setFilter(v)} />
 
-        <div>
+        <LocationWrap>
+          <LocationBtn onClick={() => handleFilter("all")}>전체보기</LocationBtn>
           <Locations>
-            {locations.map((location, i) => (
-              <li key={i}>
-                <svg width={10} height={10} viewBox="0 0 10 10">
-                  <path d="M0 0 L0 10 L10 5 Z"></path>
-                </svg>{" "}
-                {location} ({i})
-              </li>
-            ))}
+            {locations.map((location, i) => {
+              return (
+                <li key={i} onClick={() => handleFilter(location)} style={location === filter ? { color: "#e9b665", fontWeight: "bold" } : {}}>
+                  <svg width={10} height={10} viewBox="0 0 10 10" style={{ marginRight: 5 }}>
+                    <path d="M0 0 L0 10 L10 5 Z"></path>
+                  </svg>
+                  {location} ({i})
+                </li>
+              );
+            })}
           </Locations>
-        </div>
+        </LocationWrap>
       </FilterWrap>
 
       {MOCK_DATA.map((el) => {
@@ -183,12 +198,32 @@ const FilterWrap = styled.div`
   align-items: center;
 `;
 
-const Locations = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+const LocationWrap = styled.div`
   padding: 50px 0;
   border-top: 1px #dedede solid;
   border-bottom: 1px #dedede solid;
+`;
+const LocationBtn = styled.button`
+  padding: 16px 30px;
+  background-color: ${Color.colorPointer01};
+  color: white;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+`;
+
+const Locations = styled.ul`
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 300;
+
+  > li {
+    cursor: pointer;
+  }
 `;
 
 export const getStaticProps = async () => {

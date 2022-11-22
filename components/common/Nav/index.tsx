@@ -10,14 +10,28 @@ import styled from "styled-components";
 import GoogleLoginButton from "../GoogleLogin/login";
 import GoogleLogoutButton from "../GoogleLogin/logout";
 import KakaoLoginButton from "../KakaoLogin/login";
+import { useEffect } from "react";
 
 const Nav = () => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  useOutsideClick(modalRef, () => {
-    setIsOpen(false);
-  });
+  // useOutsideClick(modalRef, () => setIsOpen(false));
+
+  useEffect(() => {
+    const clickEvt = (e: any) => {
+      if (contentRef.current && !contentRef.current?.contains(e.target)) {
+        console.log("hi");
+      }
+    };
+
+    contentRef.current?.addEventListener("click", clickEvt);
+
+    return () => {
+      contentRef.current?.removeEventListener("click", clickEvt);
+    };
+  }, [contentRef]);
 
   return (
     <Wrap>
@@ -35,18 +49,22 @@ const Nav = () => {
         {isOpen && (
           <Modal target={modalRef}>
             <Dim>
-              <S.ModalContents>
+              <S.ModalContents ref={contentRef}>
                 <div className="login_bg">
+                  <Close>
+                    <svg width={25} height={25} viewBox="0 0 25 25" onClick={() => setIsOpen(!isOpen)}>
+                      <path d="M0 0 L25 25 M25 0 L 0 25 Z" stroke="black"></path>
+                    </svg>
+                  </Close>
                   <h2 className="title">SNS Login</h2>
                 </div>
                 <ul>
-                  <li className="naver">네이버 로그인</li>
-                  <li className="kakao">
-                    <KakaoLoginButton />
-                  </li>
-                  <li className="facebook">페이스북 로그인</li>
+                  {/* <li className="naver">네이버 로그인</li> */}
                   <li>
                     <GoogleLoginButton />
+                  </li>
+                  <li>
+                    <KakaoLoginButton />
                   </li>
                 </ul>
               </S.ModalContents>
@@ -67,6 +85,14 @@ const Dim = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999999;
   overflow: hidden;
+`;
+
+const Close = styled.div`
+  padding: 10px;
+  text-align: right;
+  > svg {
+    cursor: pointer;
+  }
 `;
 
 export default Nav;

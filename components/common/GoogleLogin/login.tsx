@@ -10,15 +10,22 @@ export default function GoogleLoginButton() {
     },
   });
 
-  return <GoogleButton onClick={() => customLogin()}>구글 로그인</GoogleButton>;
+  return (
+    <>
+      <GoogleButton onClick={() => customLogin()}>구글 로그인</GoogleButton>
+    </>
+  );
 }
 
 const GoogleButton = styled.button`
+  display: block;
   width: 100%;
   height: 6rem;
   background-color: #fff;
   border: 1px black solid;
   border-radius: 10px;
   outline: none;
+  font-size: 2.5rem;
+  text-align: center;
   cursor: pointer;
 `;

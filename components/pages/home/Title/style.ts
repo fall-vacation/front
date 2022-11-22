@@ -1,17 +1,32 @@
-import styled from 'styled-components'
-import * as Palett from '@/constant/color'
-import MainVisualImg from '../../../public/images/bg_visual.jpg'
+import styled from "styled-components";
+import * as Palett from "@/constant/color";
+import MainVisualImg from "../../../public/images/bg_visual.jpg";
 export const ContainerWrap = styled.div`
   position: relative;
   width: 100%;
   height: 96rem;
-  background: url('../../../../images/bg_visual.jpg') no-repeat center top;
+  background: url("../../../../images/bg_visual.jpg") no-repeat center top;
   background-size: contain;
-`
+`;
 export const ContainerBox = styled.div`
   max-width: 1538px;
   margin: 0 auto;
-`
+  .title {
+    margin-top: 100px;
+    margin-bottom: 21px;
+    font-size: 84px;
+    font-weight: 300;
+    font-family: "GmarketSans";
+    color: #0f094a;
+  }
+  .slogan {
+    margin-bottom: 100px;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "S-CoreDream";
+    color: #999;
+  }
+`;
 export const Slogan = styled.h2`
   padding-top: 250px;
   font-size: 8rem;
@@ -19,7 +34,7 @@ export const Slogan = styled.h2`
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.25;
-  font-family: 'GmarketSans';
+  font-family: "GmarketSans";
   font-weight: 500;
   span {
     font-size: 3.2rem;
@@ -29,7 +44,7 @@ export const Slogan = styled.h2`
     color: #fff;
     margin-top: 3.2rem;
   }
-`
+`;
 
 export const InputBox = styled.div`
   display: flex;
@@ -44,14 +59,14 @@ export const InputBox = styled.div`
     height: 8rem;
     padding: 0.5rem 0 0.5rem 2rem;
     width: 74.8rem;
-    input[type='text'] {
+    input[type="text"] {
       width: 100%;
       height: 100%;
       padding: 5px;
       font-size: 2.4rem;
     }
   }
-`
+`;
 export const ZoomBox = styled.div`
   width: 9.2rem;
   height: 8rem;
@@ -59,4 +74,4 @@ export const ZoomBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
