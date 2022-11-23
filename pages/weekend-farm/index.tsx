@@ -2,7 +2,8 @@ import SouthKorea from "@/components/pages/weekend-farm/south-korea";
 import { Farm } from "../../types/type";
 import styled from "styled-components";
 import * as S from "../../components/pages/home/Title/style";
-
+import Image from "next/image";
+import dummyImage from "../../public/images/dummy_images.png";
 type Props = {
   farmList: Farm[];
 };
@@ -34,6 +35,8 @@ const MOCK_DATA = [
         url: "https://www.instagram.com/soobinms/?hl=ko",
       },
     ],
+    farm_image:
+      "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
     farm_owner_name: "주인장",
     farm_owner_phone: "010-1234-5678",
     price: "시간당 5천만원",
@@ -59,6 +62,8 @@ const MOCK_DATA = [
         url: "https://www.instagram.com/soobinms/?hl=ko",
       },
     ],
+    farm_image:
+      "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
     farm_owner_name: "산타클로스",
     farm_owner_phone: "010-9876-5432",
     price: "시간당 3천원",
@@ -72,7 +77,14 @@ const MOCK_DATA = [
   },
 ];
 
-const locations = ["도봉구", "노원구", "강북구", "성북구", "중랑구", "동대문구"];
+const locations = [
+  "도봉구",
+  "노원구",
+  "강북구",
+  "성북구",
+  "중랑구",
+  "동대문구",
+];
 
 const Index = ({ farmList }: Props) => {
   return (
@@ -95,66 +107,118 @@ const Index = ({ farmList }: Props) => {
           </Locations>
         </div>
       </FilterWrap>
+      <S.FarmListWrap>
+        <div className="title_box">
+          <h2 className="title">체험농장</h2>
+          <div className="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div className="list_box">
+          {MOCK_DATA.map((el) => {
+            const {
+              farm_id,
+              farm_name,
+              farm_address,
+              farm_address_div,
+              farm_urls,
+              farm_image,
+              farm_owner_name,
+              farm_owner_phone,
+              price,
+              stars,
+              available_use_start,
+              available_use_end,
+              available_lesson,
+              etc,
+              crops,
+              tags,
+            } = el;
+            return (
+              <>
+                <S.FarmListBox>
+                  <div className="infomation">
+                    <h2 className="farm_list">{farm_name}</h2>
+                    <div className="img_box">
+                      <Image
+                        src={dummyImage}
+                        alt="Picture of me"
+                        width={445}
+                        height={280}
+                      />
+                    </div>
+                    <div className="adress_wrap">
+                      <dl>
+                        <dt>주소</dt>
+                        <dd>{farm_address}</dd>
+                      </dl>
+                      <dl>
+                        <dt>연락처</dt>
+                        <dd>{farm_owner_phone}</dd>
+                      </dl>
+                      <dl>
+                        <dt>홈페이지</dt>
+                        <dd>
+                          <ul>
+                            {farm_urls.map((el, i) => (
+                              <li key={i}>
+                                {el.url_division} : {el.url}
+                              </li>
+                            ))}
+                          </ul>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div className="reviewer">
+                    <h2 className="reviewer_title">REVIEW</h2>
+                    <div className="form_box">
+                      <form action="">
+                        <label htmlFor="">Tell us your story:</label>
+                        <textarea id="story" name="story">
+                          It was a dark and stormy night...
+                        </textarea>
+                      </form>
+                    </div>
+                    <ul>
+                      {tags.map((tag, i) => (
+                        <li key={i}>#{tag}</li>
+                      ))}
+                    </ul>
+                    <ul>
+                      {Array.from(
+                        { length: Math.floor(stars) },
+                        () => "별"
+                      ).map((star, i) => (
+                        <li key={i}>
+                          {
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+                                fill="yellow"
+                                stroke="#000"
+                              />
+                            </svg>
+                          }
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </S.FarmListBox>
+              </>
+            );
+          })}
+        </div>
+      </S.FarmListWrap>
 
-      {MOCK_DATA.map((el) => {
-        const {
-          farm_id,
-          farm_name,
-          farm_address,
-          farm_address_div,
-          farm_urls,
-          farm_owner_name,
-          farm_owner_phone,
-          price,
-          stars,
-          available_use_start,
-          available_use_end,
-          available_lesson,
-          etc,
-          crops,
-          tags,
-        } = el;
-        return (
-          <>
-            <h2>{farm_name}</h2>
-            <dl>
-              <dd>주소</dd>
-              <dt>{farm_address}</dt>
-            </dl>
-            <dl>
-              <dd>연락처</dd>
-              <dt>{farm_owner_phone}</dt>
-            </dl>
-            <dl>
-              <dd>홈페이지</dd>
-              <ul>
-                {farm_urls.map((el, i) => (
-                  <li key={i}>
-                    {el.url_division} : {el.url}
-                  </li>
-                ))}
-              </ul>
-            </dl>
-
-            <ul style={{ display: "flex" }}>
-              {tags.map((tag, i) => (
-                <li key={i}>#{tag}</li>
-              ))}
-            </ul>
-            <ul style={{ display: "flex" }}>
-              {Array.from({ length: Math.floor(stars) }, () => "별").map((star, i) => (
-                <li key={i}>
-                  {
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" fill="yellow" stroke="#000" />
-                    </svg>
-                  }
-                </li>
-              ))}
-            </ul>
-          </>
-        );
-      })}
       {/* 
       <ul>
         {farmList?.map((farm, i) => {

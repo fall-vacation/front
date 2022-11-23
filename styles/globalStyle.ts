@@ -35,4 +35,7 @@ a{
     color:black;
     text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+  font-size: 50%;
+    }
 `;

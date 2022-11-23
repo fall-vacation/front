@@ -27,7 +27,7 @@ const Nav = () => {
           </Link>
         </h1>
 
-        <div onClick={() => setIsOpen(!isOpen)}>
+        <div className="hamburger_menu" onClick={() => setIsOpen(!isOpen)}>
           <Hamburger />
         </div>
 

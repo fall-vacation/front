@@ -1,15 +1,15 @@
-import React from 'react'
-import Nav from '@/components/common/Nav'
-import Image from 'next/image'
-import Link from 'next/link'
-import * as S from './style'
-import { Color } from '@/constant/color'
-import LinkArrow from '../../../public/images/ic_linkArrow.svg'
+import React from "react";
+import Nav from "@/components/common/Nav";
+import Image from "next/image";
+import Link from "next/link";
+import * as S from "./style";
+import { Color } from "@/constant/color";
+import LinkArrow from "../../../public/images/ic_linkArrow.svg";
 type Props = {
-  color: string
-  content: string
-  link: string
-}
+  color: string;
+  content: string;
+  link: string;
+};
 const NavBtn = ({ color, content, link }: Props) => {
   return (
     <S.NavBtn color={color}>
@@ -17,13 +17,19 @@ const NavBtn = ({ color, content, link }: Props) => {
         <a>
           <div className="content">
             <span>{content}</span>
-            <Image src={LinkArrow} alt="introduce-image" />
+            <div className="introduce-image">
+              <Image
+                src={LinkArrow}
+                alt="introduce-image"
+                className={"image"}
+              />
+            </div>
           </div>
         </a>
       </Link>
     </S.NavBtn>
-  )
-}
+  );
+};
 
 const Community = () => {
   return (
@@ -44,7 +50,7 @@ const Community = () => {
         </S.BottomContent>
       </S.CommunityContainer>
     </>
-  )
-}
+  );
+};
 
-export default Community
+export default Community;
