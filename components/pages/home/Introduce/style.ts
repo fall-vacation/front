@@ -78,7 +78,7 @@ export const Content = styled.div`
       height: auto;
       border-top: 0.1rem solid #d9d9d9;
       border-bottom: 0.1rem solid #d9d9d9;
-      padding: 2rem 0 1.5rem;
+      padding: 2rem 0 1.6rem;
       box-sizing: border-box;
     }
     .text {
