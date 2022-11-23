@@ -85,7 +85,7 @@ export const Content = styled.div`
       margin-top: 6rem;
       text-align: center;
       font-size: 1.4rem;
-      line-height: 2.8rem;
+      line-height: 2.6rem;
     }
   }
 `;
