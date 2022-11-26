@@ -1,12 +1,13 @@
 import { useGoogleLogin, GoogleLogin, useGoogleOneTapLogin } from "@react-oauth/google";
 import styled from "styled-components";
-import { useUserStore } from "@/store/index";
+
+import person from "lib/person";
 
 export default function GoogleLoginButton() {
   const customLogin = useGoogleLogin({
     onSuccess: (res) => {
       console.log("로그인 성공!", res);
-      sessionStorage.setItem("fall-vacation-access_token", res.access_token);
+      person.login({ token: res.access_token });
     },
   });
 

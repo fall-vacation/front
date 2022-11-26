@@ -7,8 +7,6 @@ type Props = {
 };
 
 const Index = ({ farmList }: Props) => {
-  // const { farmList } = useFarms();
-
   return (
     <div>
       <h2>완이네 텃밭</h2>

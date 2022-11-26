@@ -36,3 +36,8 @@ export type Farm = {
 export type FarmStore = {
   farmList: Farm[];
 };
+
+export type UserStore = {
+  isLogin: boolean;
+  setIsLogin: (b: boolean) => void;
+};

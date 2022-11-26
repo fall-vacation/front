@@ -11,13 +11,13 @@ import GoogleLoginButton from "../GoogleLogin/login";
 import GoogleLogoutButton from "../GoogleLogin/logout";
 import KakaoLoginButton from "../KakaoLogin/login";
 import { useEffect } from "react";
+import person from "lib/person";
+import useUserStore from "@/store/user";
 
 const Nav = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  // useOutsideClick(modalRef, () => setIsOpen(false));
 
   useEffect(() => {
     const clickEvt = (e: any) => {
@@ -38,7 +38,7 @@ const Nav = () => {
       <S.NavBar>
         <h1>
           <Link href="/">
-            <a>Vacciones de otono</a>
+            <a>Vacciones de otono </a>
           </Link>
         </h1>
 
@@ -56,7 +56,7 @@ const Nav = () => {
                       <path d="M0 0 L25 25 M25 0 L 0 25 Z" stroke="black"></path>
                     </svg>
                   </Close>
-                  <h2 className="title">SNS Login</h2>
+                  <h2 className="title">SNS Login{String(person.isLogin)}</h2>
                 </div>
                 <ul>
                   {/* <li className="naver">네이버 로그인</li> */}
@@ -65,6 +65,16 @@ const Nav = () => {
                   </li>
                   <li>
                     <KakaoLoginButton />
+                  </li>
+
+                  <li>
+                    <button
+                      onClick={() => {
+                        person.logout;
+                      }}
+                    >
+                      로그아웃
+                    </button>
                   </li>
                 </ul>
               </S.ModalContents>
