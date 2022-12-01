@@ -18,20 +18,36 @@ const Introduce = () => {
       <S.Content>
         <div className="image">
           <S.CropsList>
-            <li>
-              <Image src={Pumpkin} alt="introduce-image" />
+            <li className="introduce-wrap">
+              <Image
+                src={Pumpkin}
+                alt="introduce-image"
+                className="introduce-image"
+              />
               <span>딸기</span>
             </li>
-            <li>
-              <Image src={Pumpkin} alt="introduce-image" />
+            <li className="introduce-wrap">
+              <Image
+                src={Pumpkin}
+                alt="introduce-image"
+                className="introduce-image"
+              />
               <span>딸기</span>
             </li>
-            <li>
-              <Image src={Pumpkin} alt="introduce-image" />
+            <li className="introduce-wrap">
+              <Image
+                src={Pumpkin}
+                alt="introduce-image"
+                className="introduce-image"
+              />
               <span>딸기</span>
             </li>
-            <li>
-              <Image src={Pumpkin} alt="introduce-image" />
+            <li className="introduce-wrap">
+              <Image
+                src={Pumpkin}
+                alt="introduce-image"
+                className="introduce-image"
+              />
               <span>딸기</span>
             </li>
           </S.CropsList>

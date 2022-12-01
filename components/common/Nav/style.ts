@@ -21,6 +21,13 @@ export const NavBar = styled.nav`
     font-family: "Comfortaa";
     font-weight: 500;
   }
+  @media screen and (max-width: 768px) {
+    height: 5rem;
+    padding: 0 2rem;
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const HamburgerWrap = styled.div`

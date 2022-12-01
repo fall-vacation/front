@@ -53,7 +53,7 @@ const Nav = () => {
             {select && <ProfileSelect />}
           </ProfileWrap>
         ) : (
-          <div onClick={() => setIsOpen(!isOpen)}>
+          <div className="hamburger_menu" onClick={() => setIsOpen(!isOpen)}>
             <Hamburger />
           </div>
         )}

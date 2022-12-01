@@ -1,24 +1,33 @@
-import styled from 'styled-components'
-import { FontColor, Color } from '@/constant/color'
+import styled from "styled-components";
+import { FontColor, Color } from "@/constant/color";
 export const CommunityContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding-bottom: 16rem;
-`
+  @media screen and (max-width: 768px) {
+    padding-bottom: 8rem;
+  }
+`;
 export const TopContent = styled.div`
   max-width: 153.8rem;
   margin: 0 auto;
   padding-top: 20rem;
   padding-bottom: 18rem;
   font-size: 0;
-`
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+    text-align: center;
+  }
+`;
 export const BottomContent = styled.div`
   display: flex;
   margin: 0 auto;
   flex-direction: column;
   font-size: 0;
   justify-content: space-between;
-`
+`;
 export const NavBtn = styled.div`
   background-color: ${Color.colorPointer02};
   width: 148rem;
@@ -54,19 +63,42 @@ export const NavBtn = styled.div`
       }
     }
   }
-`
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    a {
+      width: 100%;
+      height: 5rem;
+      padding-right: 2.5rem;
+      .content {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        .introduce-image {
+          width: 4rem;
+          .image {
+            width: 4rem !important;
+          }
+        }
+      }
+    }
+  }
+`;
 export const CommunityText = styled.div`
   font-size: 18rem;
   line-height: 3.6rem;
   color: #f5f5f5;
   letter-spacing: -0.15rem;
-  font-family: 'GmarketSans';
+  font-family: "GmarketSans";
   text-align: right;
   font-weight: 700;
   margin-top: 4.5rem;
   position: relative;
   z-index: -1;
-`
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+    line-height: 1.8rem;
+    margin-top: 2rem;
+  }
+`;
 
 export const ContentTitle = styled.h2`
   font-size: 6.4rem;
@@ -76,6 +108,14 @@ export const ContentTitle = styled.h2`
     ${FontColor.fontIndigo}
   }
   font-weight: 300;
-`
+  @media screen and (max-width: 768px) {
+    font-size: 3.2rem;
+    max-width: 100%;
+  }
+`;
 
-export const NavBtnContainer = styled.div``
+export const NavBtnContainer = styled.div`
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`;

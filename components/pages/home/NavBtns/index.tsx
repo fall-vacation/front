@@ -40,7 +40,13 @@ const NavBtn = ({ color, title, content, link }: Props) => {
           <div className="title">{title}</div>
           <div className="content">
             <span>{content}</span>
-            <Image src={LinkArrow} alt="introduce-image" />
+            <div className="introduce-image">
+              <Image
+                src={LinkArrow}
+                alt="introduce-image"
+                className={"image"}
+              />
+            </div>
           </div>
         </a>
       </Link>

@@ -31,6 +31,7 @@ export type Farm = {
   isLesson: boolean;
   site?: string;
   etc?: any;
+  imageUrl: string;
 };
 
 export type FarmStore = {
