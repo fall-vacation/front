@@ -6,7 +6,6 @@ import person from "lib/person";
 export default function GoogleLoginButton() {
   const customLogin = useGoogleLogin({
     onSuccess: (res) => {
-      console.log("로그인 성공!", res);
       person.login({ token: res.access_token });
     },
   });

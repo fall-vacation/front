@@ -35,11 +35,16 @@ class Person {
   }
 
   logout() {
+    this._isLogin = false;
     nookies.destroy({}, FALL_VACATION_USER_KEY);
   }
 
   load() {
     const pack = nookies.get()[FALL_VACATION_USER_KEY];
+
+    if (!pack) {
+      return;
+    }
     return JSON.parse(pack);
   }
 }

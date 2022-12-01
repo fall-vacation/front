@@ -1,12 +1,9 @@
 import create from "zustand";
-import { devtools } from "zustand/middleware";
 import { UserStore } from "../types/type";
 
-const useUserStore = create(
-  devtools<UserStore>((set) => ({
-    isLogin: false,
-    setIsLogin: (data: boolean) => set((state: UserStore) => ({ isLogin: data })),
-  }))
-);
+const useUserStore = create<UserStore>((set) => ({
+  isLogin: false,
+  setIsLogin: (data: boolean) => set(() => ({ isLogin: data })),
+}));
 
 export default useUserStore;
