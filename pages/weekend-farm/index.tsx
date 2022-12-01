@@ -172,45 +172,41 @@ const Index = ({ farmList }: Props) => {
                         </dd>
                       </dl>
                     </div>
+                    <div className="hashtag_wrap">
+                      <ul>
+                        {tags.map((tag, i) => (
+                          <li key={i}>#{tag}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   <div className="reviewer">
                     <h2 className="reviewer_title">REVIEW</h2>
                     <div className="form_box">
                       <form action="">
-                        <label htmlFor="">Tell us your story:</label>
-                        <textarea id="story" name="story">
-                          It was a dark and stormy night...
-                        </textarea>
+                        <label htmlFor="story">리뷰를 작성해주세요.</label>
+                        <textarea
+                          id="story"
+                          name="story"
+                          placeholder="리뷰를 작성해주세요."
+                        ></textarea>
+                        <div className="reviewer_submit-wrap">
+                          <select name="" id="" className="score_star">
+                            <option>⭐️⭐️⭐️⭐️⭐️</option>
+                            <option>⭐️⭐️⭐️⭐️</option>
+                            <option>⭐️⭐️⭐️</option>
+                            <option>⭐️⭐️</option>
+                            <option>⭐️</option>
+                          </select>
+                          <button type="submit" className="submit_btn">
+                            리뷰 등록
+                          </button>
+                        </div>
                       </form>
+                      <ul className="comment_wrap">
+                        <li></li>
+                      </ul>
                     </div>
-                    <ul>
-                      {tags.map((tag, i) => (
-                        <li key={i}>#{tag}</li>
-                      ))}
-                    </ul>
-                    <ul>
-                      {Array.from(
-                        { length: Math.floor(stars) },
-                        () => "별"
-                      ).map((star, i) => (
-                        <li key={i}>
-                          {
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                                fill="yellow"
-                                stroke="#000"
-                              />
-                            </svg>
-                          }
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </S.FarmListBox>
               </>
@@ -264,6 +260,7 @@ export const getStaticProps = async () => {
       ownerName: "",
       contact: "010-3720-9520",
       price: 10000,
+      imageUrl: "",
       startTime: 0,
       endTime: 0,
       isLesson: true,
