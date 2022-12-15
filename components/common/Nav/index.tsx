@@ -148,7 +148,7 @@ const div = {
     width: 100%;
     height: 14rem;
     padding: 4rem;
-    background-color: #fff;
+    background-color: rgba(200, 200, 200, 0.3);
     border-bottom: 3px solid #7d7d7d;
     z-index: 9999;
   `,
