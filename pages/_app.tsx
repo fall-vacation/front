@@ -6,6 +6,10 @@ import { ThemeProvider, DefaultTheme } from "styled-components";
 import { GlobalStyle } from "@/styles/globalStyle";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import "../public/static/fonts/style.css";
+import Nprogress from "nprogress";
+import "../nprogress.css";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const theme: DefaultTheme = {
   mainColor: "#0055b8",
@@ -13,6 +17,24 @@ const theme: DefaultTheme = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    Nprogress.configure({ showSpinner: false });
+
+    const handleRouteStart = (url: string) => {
+      Nprogress.start();
+    };
+    const handleRouteChange = (url: string) => {
+      Nprogress.done(false);
+    };
+    router.events.on("routeChangeStart", handleRouteStart);
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <ThemeProvider theme={theme}>
       <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_NAVER_CLIENT_ID || ""}>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import * as S from "../../components/pages/home/Title/style";
 import { Color } from "@/constant/color";
 import { FIXED_LOCATION_INFO } from "../../components/pages/weekend-farm/south-korea";
+import PageContainer from "@/components/common/PageContainer";
 
 import Image from "next/image";
 import dummyImage from "../../public/images/dummy_images.png";
@@ -92,128 +93,129 @@ const Index = ({ farmList }: Props) => {
   };
   return (
     <S.ContainerBox>
-      <h2 className="title">Weekend Farm</h2>
-      <div className="slogan">위켄드팜은 어쩌고 저쩌고 조용하고 안락한 블라블라 다양한 농장을 제공합니다아.</div>
+      <PageContainer>
+        <h2 className="title">Weekend Farm</h2>
+        <div className="slogan">위켄드팜은 어쩌고 저쩌고 조용하고 안락한 블라블라 다양한 농장을 제공합니다아.</div>
 
-      <FilterWrap>
-        <SouthKorea width={800} handleClick={(v) => setFilter(v)} />
+        <FilterWrap>
+          <SouthKorea width={800} handleClick={(v) => setFilter(v)} />
 
-        <LocationWrap>
-          <LocationBtn onClick={() => handleFilter("all")}>전체보기</LocationBtn>
-          <Locations>
-            {locations.map((location, i) => {
+          <LocationWrap>
+            <LocationBtn onClick={() => handleFilter("all")}>전체보기</LocationBtn>
+            <Locations>
+              {locations.map((location, i) => {
+                return (
+                  <li key={i} onClick={() => handleFilter(location)} style={location === filter ? { color: "#e9b665", fontWeight: "bold" } : {}}>
+                    <svg width={10} height={10} viewBox="0 0 10 10" style={{ marginRight: 5 }}>
+                      <path d="M0 0 L0 10 L10 5 Z"></path>
+                    </svg>
+                    {location} ({i})
+                  </li>
+                );
+              })}
+            </Locations>
+          </LocationWrap>
+        </FilterWrap>
+        <S.FarmListWrap>
+          <div className="title_box">
+            <h2 className="title">체험농장</h2>
+            <div className="icon">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div className="list_box">
+            {MOCK_DATA.map((el) => {
+              const {
+                farm_id,
+                farm_name,
+                farm_address,
+                farm_address_div,
+                farm_urls,
+                farm_image,
+                farm_owner_name,
+                farm_owner_phone,
+                price,
+                stars,
+                available_use_start,
+                available_use_end,
+                available_lesson,
+                etc,
+                crops,
+                tags,
+              } = el;
               return (
-                <li key={i} onClick={() => handleFilter(location)} style={location === filter ? { color: "#e9b665", fontWeight: "bold" } : {}}>
-                  <svg width={10} height={10} viewBox="0 0 10 10" style={{ marginRight: 5 }}>
-                    <path d="M0 0 L0 10 L10 5 Z"></path>
-                  </svg>
-                  {location} ({i})
-                </li>
+                <>
+                  <S.FarmListBox>
+                    <div className="infomation">
+                      <h2 className="farm_list">{farm_name}</h2>
+                      <div className="img_box">
+                        <Image src={dummyImage} alt="Picture of me" width={445} height={280} />
+                      </div>
+                      <div className="adress_wrap">
+                        <dl>
+                          <dt>주소</dt>
+                          <dd>{farm_address}</dd>
+                        </dl>
+                        <dl>
+                          <dt>연락처</dt>
+                          <dd>{farm_owner_phone}</dd>
+                        </dl>
+                        <dl>
+                          <dt>홈페이지</dt>
+                          <dd>
+                            <ul>
+                              {farm_urls.map((el, i) => (
+                                <li key={i}>
+                                  {el.url_division} : {el.url}
+                                </li>
+                              ))}
+                            </ul>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div className="hashtag_wrap">
+                        <ul>
+                          {tags.map((tag, i) => (
+                            <li key={i}>#{tag}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="reviewer">
+                      <h2 className="reviewer_title">REVIEW</h2>
+                      <div className="form_box">
+                        <form action="">
+                          <label htmlFor="story">리뷰를 작성해주세요.</label>
+                          <textarea id="story" name="story" placeholder="리뷰를 작성해주세요."></textarea>
+                          <div className="reviewer_submit-wrap">
+                            <select name="" id="" className="score_star">
+                              <option>⭐️⭐️⭐️⭐️⭐️</option>
+                              <option>⭐️⭐️⭐️⭐️</option>
+                              <option>⭐️⭐️⭐️</option>
+                              <option>⭐️⭐️</option>
+                              <option>⭐️</option>
+                            </select>
+                            <button type="submit" className="submit_btn">
+                              리뷰 등록
+                            </button>
+                          </div>
+                        </form>
+                        <ul className="comment_wrap">
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </S.FarmListBox>
+                </>
               );
             })}
-          </Locations>
-        </LocationWrap>
-      </FilterWrap>
-      <S.FarmListWrap>
-        <div className="title_box">
-          <h2 className="title">체험농장</h2>
-          <div className="icon">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
           </div>
-        </div>
-        <div className="list_box">
-          {MOCK_DATA.map((el) => {
-            const {
-              farm_id,
-              farm_name,
-              farm_address,
-              farm_address_div,
-              farm_urls,
-              farm_image,
-              farm_owner_name,
-              farm_owner_phone,
-              price,
-              stars,
-              available_use_start,
-              available_use_end,
-              available_lesson,
-              etc,
-              crops,
-              tags,
-            } = el;
-            return (
-              <>
-                <S.FarmListBox>
-                  <div className="infomation">
-                    <h2 className="farm_list">{farm_name}</h2>
-                    <div className="img_box">
-                      <Image src={dummyImage} alt="Picture of me" width={445} height={280} />
-                    </div>
-                    <div className="adress_wrap">
-                      <dl>
-                        <dt>주소</dt>
-                        <dd>{farm_address}</dd>
-                      </dl>
-                      <dl>
-                        <dt>연락처</dt>
-                        <dd>{farm_owner_phone}</dd>
-                      </dl>
-                      <dl>
-                        <dt>홈페이지</dt>
-                        <dd>
-                          <ul>
-                            {farm_urls.map((el, i) => (
-                              <li key={i}>
-                                {el.url_division} : {el.url}
-                              </li>
-                            ))}
-                          </ul>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div className="hashtag_wrap">
-                      <ul>
-                        {tags.map((tag, i) => (
-                          <li key={i}>#{tag}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="reviewer">
-                    <h2 className="reviewer_title">REVIEW</h2>
-                    <div className="form_box">
-                      <form action="">
-                        <label htmlFor="story">리뷰를 작성해주세요.</label>
-                        <textarea id="story" name="story" placeholder="리뷰를 작성해주세요."></textarea>
-                        <div className="reviewer_submit-wrap">
-                          <select name="" id="" className="score_star">
-                            <option>⭐️⭐️⭐️⭐️⭐️</option>
-                            <option>⭐️⭐️⭐️⭐️</option>
-                            <option>⭐️⭐️⭐️</option>
-                            <option>⭐️⭐️</option>
-                            <option>⭐️</option>
-                          </select>
-                          <button type="submit" className="submit_btn">
-                            리뷰 등록
-                          </button>
-                        </div>
-                      </form>
-                      <ul className="comment_wrap">
-                        <li></li>
-                      </ul>
-                    </div>
-                  </div>
-                </S.FarmListBox>
-              </>
-            );
-          })}
-        </div>
-      </S.FarmListWrap>
+        </S.FarmListWrap>
 
-      {/* 
+        {/* 
       <ul>
         {farmList?.map((farm, i) => {
           const { name, address, contact, price } = farm;
@@ -227,6 +229,7 @@ const Index = ({ farmList }: Props) => {
           );
         })}
       </ul> */}
+      </PageContainer>
     </S.ContainerBox>
   );
 };

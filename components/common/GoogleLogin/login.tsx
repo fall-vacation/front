@@ -2,11 +2,17 @@ import { useGoogleLogin, GoogleLogin, useGoogleOneTapLogin } from "@react-oauth/
 import styled from "styled-components";
 
 import person from "lib/person";
+import { useUserStore } from "@/store/user";
+import { Dispatch, SetStateAction } from "react";
 
-export default function GoogleLoginButton() {
+export default function GoogleLoginButton({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) {
+  const setIsLogin = useUserStore((p) => p.setIsLogin);
+
   const customLogin = useGoogleLogin({
     onSuccess: (res) => {
       person.login({ token: res.access_token });
+      setIsLogin(true);
+      setIsOpen(false);
     },
   });
 

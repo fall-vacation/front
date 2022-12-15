@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Crop } from "../../types/type";
+import PageContainer from "../../components/common/PageContainer";
 
 type Props = {
   farmList: Crop[];
@@ -8,7 +9,7 @@ type Props = {
 
 const Index = ({ farmList }: Props) => {
   return (
-    <div>
+    <PageContainer>
       <h2>완이네 텃밭</h2>
       <ul>
         {farmList?.map((farm, i) => {
@@ -25,7 +26,7 @@ const Index = ({ farmList }: Props) => {
           );
         })}
       </ul>
-    </div>
+    </PageContainer>
   );
 };
 
