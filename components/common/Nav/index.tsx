@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import person from "lib/person";
 import { useUserStore } from "@/store/user";
 import { useRouter } from "next/router";
+import ProfileIcon from "@/components/ui/icon/profile";
 
 const Nav = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -91,22 +92,7 @@ const FIXED_PROFILE_SIZE = 40;
 const Profile = ({ click }: { click: () => void }) => {
   return (
     <ProfileBtn size={FIXED_PROFILE_SIZE} onClick={click}>
-      <svg width={FIXED_PROFILE_SIZE} height={FIXED_PROFILE_SIZE} viewBox="0 0 82 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="41.0459" cy="40.1875" r="40" fill="#8ED0D5" />
-        <mask id="mask0_809_5975" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="81" height="80">
-          <circle cx="40.9541" cy="40" r="39.5" fill="#8ED0D5" stroke="#8ED0D5" />
-        </mask>
-        <g mask="url(#mask0_809_5975)">
-          <path
-            d="M40.9541 13.75C32.603 13.75 25.8331 20.4997 25.8331 28.826C25.8331 37.1522 32.603 43.9019 40.9541 43.9019C49.3052 43.9019 56.0751 37.1522 56.0751 28.826C56.0751 20.4997 49.3052 13.75 40.9541 13.75Z"
-            fill="#C8E7E8"
-          />
-          <path
-            d="M24.8251 51.9424C16.474 51.9424 9.7041 58.6922 9.7041 67.0184V71.7956C9.7041 74.8238 11.9052 77.4057 14.9028 77.8936C32.1561 80.7021 49.7521 80.7021 67.0054 77.8936C70.003 77.4057 72.2041 74.8238 72.2041 71.7956V67.0184C72.2041 58.6922 65.4342 51.9424 57.0831 51.9424H55.7087C54.9647 51.9424 54.2255 52.0597 53.5183 52.2899L50.0283 53.4261C44.132 55.3457 37.7762 55.3457 31.8799 53.4261L28.3899 52.2899C27.6827 52.0597 26.9435 51.9424 26.1995 51.9424H24.8251Z"
-            fill="#C8E7E8"
-          />
-        </g>
-      </svg>
+      <ProfileIcon size={FIXED_PROFILE_SIZE} />
     </ProfileBtn>
   );
 };
@@ -122,7 +108,14 @@ const ProfileSelect = ({ setIsOpen, setSelect }: { setIsOpen: Dispatch<SetStateA
 
   return (
     <ProfileSelectWrap size={FIXED_PROFILE_SIZE} ref={selectRef}>
-      <li onClick={() => router.push("/mypage")}>마이페이지</li>
+      <li
+        onClick={() => {
+          router.push("/mypage");
+          setSelect(false);
+        }}
+      >
+        마이페이지
+      </li>
       <li
         onClick={() => {
           setIsLogin(false);

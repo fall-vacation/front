@@ -1,7 +1,7 @@
 import { NotVoid } from "lodash";
 import create from "zustand";
 import { devtools } from "zustand/middleware";
-import { CropStore, FarmStore, UserStore } from "../types/type";
+import { CropStore, FarmStore } from "../types/type";
 
 const useFarms = create(
   devtools<FarmStore>((set) => ({
