@@ -4,9 +4,9 @@ export const CommunityContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   padding-bottom: 16rem;
-  @media screen and (max-width: 768px) {
-    padding-bottom: 8rem;
-  }
+  ${({ theme }) => theme.media.mobile`
+    padding-bottom:8rem;
+  `}
 `;
 export const TopContent = styled.div`
   max-width: 153.8rem;
@@ -76,7 +76,9 @@ export const NavBtn = styled.div`
           width: 4rem;
           .image {
             width: 4rem !important;
-          }
+          }import theme from '../../../styles/common/theme';
+import { theme } from '@/styles/common/theme';
+
         }
       }
     }
