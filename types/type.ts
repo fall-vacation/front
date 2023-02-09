@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 enum Level {
   low = 1,
   middle,
@@ -36,4 +37,17 @@ export type Farm = {
 
 export type FarmStore = {
   farmList: Farm[];
+};
+
+export interface CommentProps {
+  id: string;
+  body: string;
+  username: string;
+  userId: string;
+  parentId: null;
+  createdAt: string;
+}
+
+export type CommentList = {
+  comment: CommentProps[];
 };

@@ -9,6 +9,7 @@ import PageContainer from "@/components/common/PageContainer";
 
 import Image from "next/image";
 import dummyImage from "../../public/images/dummy_images.png";
+import Comments from "@/components/pages/Comments";
 type Props = {
   farmList: Farm[];
 };
@@ -40,7 +41,8 @@ const MOCK_DATA = [
         url: "https://www.instagram.com/soobinms/?hl=ko",
       },
     ],
-    farm_image: "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
+    farm_image:
+      "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
     farm_owner_name: "주인장",
     farm_owner_phone: "010-1234-5678",
     price: "시간당 5천만원",
@@ -66,7 +68,8 @@ const MOCK_DATA = [
         url: "https://www.instagram.com/soobinms/?hl=ko",
       },
     ],
-    farm_image: "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
+    farm_image:
+      "https://mediahub.seoul.go.kr/uploads/mediahub/2022/02/OgXTpScaEOrxSIZpxwloiMMMdBIHtLfe.png",
     farm_owner_name: "산타클로스",
     farm_owner_phone: "010-9876-5432",
     price: "시간당 3천원",
@@ -95,18 +98,36 @@ const Index = ({ farmList }: Props) => {
     <S.ContainerBox>
       <PageContainer>
         <h2 className="title">Weekend Farm</h2>
-        <div className="slogan">위켄드팜은 어쩌고 저쩌고 조용하고 안락한 블라블라 다양한 농장을 제공합니다아.</div>
+        <div className="slogan">
+          위켄드팜은 어쩌고 저쩌고 조용하고 안락한 블라블라 다양한 농장을
+          제공합니다아.
+        </div>
 
         <FilterWrap>
           <SouthKorea width={800} handleClick={(v) => setFilter(v)} />
 
           <LocationWrap>
-            <LocationBtn onClick={() => handleFilter("all")}>전체보기</LocationBtn>
+            <LocationBtn onClick={() => handleFilter("all")}>
+              전체보기
+            </LocationBtn>
             <Locations>
               {locations.map((location, i) => {
                 return (
-                  <li key={i} onClick={() => handleFilter(location)} style={location === filter ? { color: "#e9b665", fontWeight: "bold" } : {}}>
-                    <svg width={10} height={10} viewBox="0 0 10 10" style={{ marginRight: 5 }}>
+                  <li
+                    key={i}
+                    onClick={() => handleFilter(location)}
+                    style={
+                      location === filter
+                        ? { color: "#e9b665", fontWeight: "bold" }
+                        : {}
+                    }
+                  >
+                    <svg
+                      width={10}
+                      height={10}
+                      viewBox="0 0 10 10"
+                      style={{ marginRight: 5 }}
+                    >
                       <path d="M0 0 L0 10 L10 5 Z"></path>
                     </svg>
                     {location} ({i})
@@ -152,7 +173,12 @@ const Index = ({ farmList }: Props) => {
                     <div className="infomation">
                       <h2 className="farm_list">{farm_name}</h2>
                       <div className="img_box">
-                        <Image src={dummyImage} alt="Picture of me" width={445} height={280} />
+                        <Image
+                          src={dummyImage}
+                          alt="Picture of me"
+                          width={445}
+                          height={280}
+                        />
                       </div>
                       <div className="adress_wrap">
                         <dl>
@@ -184,12 +210,17 @@ const Index = ({ farmList }: Props) => {
                         </ul>
                       </div>
                     </div>
-                    <div className="reviewer">
+                    <Comments currentUserId="1" />
+                    {/* <div className="reviewer">
                       <h2 className="reviewer_title">REVIEW</h2>
                       <div className="form_box">
                         <form action="">
                           <label htmlFor="story">리뷰를 작성해주세요.</label>
-                          <textarea id="story" name="story" placeholder="리뷰를 작성해주세요."></textarea>
+                          <textarea
+                            id="story"
+                            name="story"
+                            placeholder="리뷰를 작성해주세요."
+                          ></textarea>
                           <div className="reviewer_submit-wrap">
                             <select name="" id="" className="score_star">
                               <option>⭐️⭐️⭐️⭐️⭐️</option>
@@ -207,7 +238,7 @@ const Index = ({ farmList }: Props) => {
                           <li></li>
                         </ul>
                       </div>
-                    </div>
+                    </div> */}
                   </S.FarmListBox>
                 </>
               );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import * as Palett from "@/constant/color";
 import MainVisualImg from "../../../public/images/bg_visual.jpg";
+import theme from "@/styles/common/theme";
 
 export const ContainerWrap = styled.div`
   position: relative;
@@ -33,13 +34,14 @@ export const ContainerBox = styled.div`
     font-weight: 300;
     font-family: "S-CoreDream";
     color: #999;
-  @media screen and (max-width: 768px) {
-    max-width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
+  ${({ theme }) => theme.media.mobile`
+   max-width: 100%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  `}
 `;
 export const Slogan = styled.h2`
   padding-top: 250px;
@@ -196,73 +198,7 @@ export const FarmListBox = styled.div`
   .infomation {
     max-width: 55rem;
   }
-  .reviewer {
-    margin-right: 4rem;
-    min-width: 64rem;
-    &_title {
-      font-size: 2.2rem;
-      font-weight: 200;
-      line-height: 2.8rem;
-      margin-bottom: 3rem;
-    }
-    .form_box {
-      border-top: 0.1rem solid #dedede;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 0.1rem solid #dedede;
-      position: relative;
-      label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(1px 1px 1px 1px);
-        clip: rect(1px, 1px, 1px, 1px);
-      }
-      form {
-        display: block;
-      }
-      textarea {
-        resize: none;
-        width: 100%;
-        padding: 2rem;
-        box-sizing: border-box;
-        display: block;
-        height: 12rem;
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-        border: 1px solid #dedede;
-      }
-      .submit_btn {
-        font-size: 1.6rem;
-        line-height: 1;
-        padding: 1.6rem 3.3rem 1.3rem;
-        color: #fff;
-        background: #e9b665;
-        box-sizing: border-box;
-        border: none;
-        cursor: pointer;
-        height: 5rem;
-      }
-      .reviewer_submit-wrap {
-        margin-top: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        .submit_btn {
-          margin-left: 1.5rem;
-        }
-        .score_star {
-          width: 18rem;
-          box-sizing: border-box;
-          padding: 1.5rem 1.3rem;
-          height: 5rem;
-          option {
-          }
-        }
-      }
-    }
-  }
+
   .img_box {
     margin-bottom: 4.8rem;
   }
